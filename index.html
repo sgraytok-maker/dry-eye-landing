@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dry Eye Treatment - Graytok Family Vision Care</title>
+    <title>Dry Eye Treatment Greensburg PA | Graytok Family Vision Care</title>
+    <meta name="description" content="Expert dry eye treatment in Greensburg PA. OptiLight IPL therapy, iLux, BlephEx. Board-certified optometrists. Call (724) 834-8033 for relief from dry eyes.">
+    <meta name="keywords" content="dry eye treatment Greensburg PA, eye pain Greensburg, dry eye doctor Greensburg, OptiLight Greensburg, eye care Westmoreland County">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -57,10 +64,12 @@
         }
 
         .hero h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 3rem;
-            font-weight: 800;
+            font-weight: 900;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.1;
         }
 
         .hero p {
@@ -178,9 +187,35 @@
         }
 
         .benefits {
-            background: #f0f8f0;
-            padding: 3rem 0;
+            background: #1e40af;
+            background-image: 
+                radial-gradient(at 40% 20%, hsla(228,100%,74%,0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,100%,80%,0.1) 0px, transparent 50%),
+                radial-gradient(at 40% 40%, hsla(220,100%,90%,0.05) 0px, transparent 50%),
+                radial-gradient(at 20% 80%, hsla(240,100%,70%,0.08) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, hsla(260,100%,80%,0.1) 0px, transparent 50%);
+            padding: 4rem 0;
             margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%),
+                linear-gradient(0deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .benefits h2 {
+            color: white;
         }
 
         .benefits-grid {
@@ -191,11 +226,19 @@
         }
 
         .benefit-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
         }
 
         .benefit-icon {
@@ -244,8 +287,8 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Stop Suffering from Dry Eyes</h1>
-            <p>Professional treatment that brings lasting relief</p>
+            <h1>Dry Eye Treatment in Greensburg, PA</h1>
+            <p>Professional relief from dry eyes, eye pain & irritation at Graytok Family Vision Care</p>
         </div>
     </section>
 
@@ -256,24 +299,24 @@
     <div class="container">
         <div class="main-content">
             <div class="info-section">
-                <h2>Are You Experiencing:</h2>
+                <h2>Are You Experiencing Dry Eyes in Greensburg?</h2>
                 <ul class="symptoms">
                     <li>Persistent eye dryness or irritation</li>
-                    <li>Burning or stinging sensation</li>
+                    <li>Burning or stinging eye pain</li>
                     <li>Feeling of sand or grit in your eyes</li>
                     <li>Excessive tearing or watery eyes</li>
                     <li>Blurred vision or eye fatigue</li>
                     <li>Difficulty wearing contact lenses</li>
                 </ul>
 
-                <h3>Our Advanced Treatment Options:</h3>
-                <p>We offer comprehensive dry eye evaluations and cutting-edge treatments including:</p>
+                <h3>Advanced Dry Eye Treatment in Greensburg, PA:</h3>
+                <p>At our Greensburg location, we offer comprehensive dry eye evaluations and cutting-edge treatments including:</p>
                 <ul style="margin: 1rem 0; padding-left: 1rem;">
                     <li>OptiLight by Lumenis (IPL therapy)</li>
                     <li>iLux Meibomian Gland Treatment</li>
                     <li>BlephEx lid hygiene therapy</li>
                     <li>Punctal plugs and prescription drops</li>
-                    <li>Customized treatment plans</li>
+                    <li>Customized treatment plans for Westmoreland County residents</li>
                 </ul>
             </div>
 
@@ -324,7 +367,7 @@
 
     <section class="benefits">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 1rem;">Why Choose Our Dry Eye Treatment?</h2>
+            <h2 style="text-align: center; margin-bottom: 1rem;">Why Choose Greensburg's Leading Dry Eye Specialists?</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">👨‍⚕️</div>
