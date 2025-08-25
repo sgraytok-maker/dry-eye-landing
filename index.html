@@ -253,45 +253,54 @@
                 </ul>
             </div>
 
-            <form class="signup-form" id="signupForm">
-                <h2 style="margin-bottom: 1.5rem; text-align: center; color: #2d3748;">Schedule Your Consultation</h2>
-                
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+<form class="signup-form" 
+      id="signupForm" 
+      action="https://formspree.io/f/movnazzo" 
+      method="POST">
+    <h2 style="margin-bottom: 1.5rem; text-align: center; color: #2d3748;">Schedule Your Consultation</h2>
+    
+    <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+    </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+    </div>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
+    <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required>
+    </div>
 
-                <div class="form-group">
-                    <label for="preferred-time">Preferred Time</label>
-                    <select id="preferred-time" name="preferred-time">
-                        <option value="">Select preferred time</option>
-                        <option value="morning">Morning (8am-12pm)</option>
-                        <option value="afternoon">Afternoon (12pm-5pm)</option>
-                        <option value="evening">Evening (5pm-7pm)</option>
-                    </select>
-                </div>
+    <div class="form-group">
+        <label for="preferred-time">Preferred Time</label>
+        <select id="preferred-time" name="preferred-time">
+            <option value="">Select preferred time</option>
+            <option value="morning">Morning (8am-12pm)</option>
+            <option value="afternoon">Afternoon (12pm-5pm)</option>
+            <option value="evening">Evening (5pm-7pm)</option>
+        </select>
+    </div>
 
-                <div class="form-group">
-                    <label for="symptoms">Describe Your Symptoms</label>
-                    <textarea id="symptoms" name="symptoms" rows="3" placeholder="Tell us about your dry eye symptoms..."></textarea>
-                </div>
+    <div class="form-group">
+        <label for="symptoms">Describe Your Symptoms</label>
+        <textarea id="symptoms" name="symptoms" rows="3" placeholder="Tell us about your dry eye symptoms..."></textarea>
+    </div>
 
-                <button type="submit" class="submit-btn">Request Free Consultation</button>
-                
-                <p style="font-size: 0.875rem; color: #718096; text-align: center; margin-top: 1rem;">
-                    We'll contact you within 24 hours to schedule your appointment
-                </p>
-            </form>
+    <!-- Hidden input so Formspree knows where to reply -->
+    <input type="hidden" name="_replyto" value="email">
+
+    <!-- Optional: Redirect to a thank-you page instead of raw Formspree page -->
+    <!-- <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html"> -->
+
+    <button type="submit" class="submit-btn">Request Free Consultation</button>
+    
+    <p style="font-size: 0.875rem; color: #718096; text-align: center; margin-top: 1rem;">
+        We'll contact you within 24 hours to schedule your appointment
+    </p>
+</form>
         </div>
     </div>
 
@@ -324,24 +333,5 @@
             <p style="margin-top: 0.5rem;">📍 235 Humphrey Rd., Greensburg, PA 15601 | 📞 (724) 834-8033</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Show success message
-            alert('Thank you! We\'ll contact you within 24 hours to schedule your consultation.');
-            
-            // Here you would typically send the data to your server
-            console.log('Form data:', data);
-            
-            // Reset form
-            this.reset();
-        });
-    </script>
 </body>
 </html>
