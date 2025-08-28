@@ -28,7 +28,7 @@
         "https://images.pexels.com/photos/3881485/pexels-photo-3881485.jpeg",
         "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg"
       ],
-      "description": "Leading dry eye treatment specialists in Greensburg PA with over 30 years of experience. OptiLight IPL, iLux, and BlephEx treatments available.",
+      "description": "Leading dry eye treatment specialists in Greensburg PA with over 30 years of experience. OptiLight IPL, iLux, and BlephEx treatments available for lasting dry eye relief.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "235 Humphrey Rd",
@@ -55,7 +55,7 @@
           "closes": "17:00"
         }
       ],
-      "medicalSpecialty": ["Optometry", "Dry Eye Treatment", "IPL Therapy"],
+      "medicalSpecialty": ["Optometry", "Dry Eye Treatment", "IPL Therapy", "Meibomian Gland Dysfunction"],
       "areaServed": [
         "Greensburg, PA",
         "Latrobe, PA", 
@@ -65,27 +65,30 @@
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Dry Eye Treatments",
+        "name": "Dry Eye Relief Treatments",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "MedicalProcedure",
-              "name": "OptiLight IPL Therapy for Dry Eyes"
+              "name": "OptiLight IPL Therapy for Dry Eyes",
+              "description": "FDA-approved intense pulsed light treatment for dry eye relief"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "MedicalProcedure", 
-              "name": "iLux Meibomian Gland Treatment"
+              "name": "iLux Meibomian Gland Treatment",
+              "description": "Advanced treatment for blocked oil glands causing dry eyes"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "MedicalProcedure",
-              "name": "BlephEx Eyelid Cleaning Treatment"
+              "name": "BlephEx Eyelid Cleaning Treatment",
+              "description": "Professional deep cleaning therapy for dry eye relief"
             }
           }
         ]
@@ -123,12 +126,25 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary-blue: #3b82f6;
+            --primary-blue-dark: #2563eb;
+            --primary-blue-light: #60a5fa;
+            --text-dark: #1e293b;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --background-light: #f8fafc;
+            --border-light: #e2e8f0;
+            --success-green: #10b981;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #1e293b;
+            color: var(--text-dark);
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -146,7 +162,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            border-bottom: 1px solid var(--border-light);
         }
 
         .header-content {
@@ -158,7 +174,7 @@
         .logo {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #1e293b;
+            color: var(--text-dark);
             text-decoration: none;
         }
 
@@ -168,7 +184,7 @@
             text-decoration: none;
             font-size: 1rem;
             padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
             border-radius: 30px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
@@ -196,9 +212,9 @@
             box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
         }
 
-        /* Urgency Badge */
+        /* Urgency Banner */
         .urgency-banner {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
             color: white;
             text-align: center;
             padding: 0.5rem;
@@ -210,7 +226,7 @@
         .hero {
             padding: 2.5rem 0 1.5rem;
             text-align: center;
-            background: radial-gradient(ellipse at center, rgba(37,99,235,0.05) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(59,130,246,0.05) 0%, transparent 70%);
         }
 
         .hero h1 {
@@ -219,14 +235,14 @@
             font-weight: 900;
             margin-bottom: 1rem;
             line-height: 1.1;
-            color: #1e293b;
+            color: var(--text-dark);
             text-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .hero-subtitle {
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            color: #64748b;
+            color: var(--text-light);
             font-weight: 500;
         }
 
@@ -247,13 +263,13 @@
 
         .rating-text {
             font-size: 0.9rem;
-            color: #64748b;
+            color: var(--text-light);
             font-weight: 500;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
             color: white;
             padding: 1.2rem 2.5rem;
             border-radius: 50px;
@@ -267,6 +283,7 @@
             overflow: hidden;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            cursor: pointer;
         }
 
         .cta-button::before {
@@ -320,20 +337,22 @@
             background: rgba(255, 255, 255, 0.8);
             border-radius: 12px;
             backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
         }
 
         .trust-icon {
             font-size: 2rem;
             margin-bottom: 0.5rem;
+            color: var(--success-green);
         }
 
         .trust-text {
             font-size: 0.85rem;
             font-weight: 600;
-            color: #475569;
+            color: var(--text-medium);
         }
 
-        /* Map Section - Moved Higher */
+        /* Map Section */
         .map-section {
             background: white;
             padding: 2rem;
@@ -344,7 +363,7 @@
         }
 
         .map-section h3 {
-            color: #1e293b;
+            color: var(--text-dark);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
@@ -379,10 +398,17 @@
         }
 
         .info-section h2 {
-            color: #1e293b;
+            color: var(--text-dark);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
             font-weight: 700;
+        }
+
+        .info-section h3 {
+            color: var(--text-dark);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .symptoms {
@@ -395,22 +421,24 @@
             position: relative;
             padding-left: 2rem;
             font-size: 0.95rem;
-            color: #475569;
+            color: var(--text-medium);
         }
 
         .symptoms li::before {
-            content: "✅";
+            content: "✓";
             position: absolute;
             left: 0;
             font-size: 1.1rem;
+            color: var(--success-green);
+            font-weight: bold;
         }
 
         /* Enhanced Form */
         .signup-form {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            background: linear-gradient(135deg, var(--background-light) 0%, #f1f5f9 100%);
             padding: 2rem;
             border-radius: 20px;
-            border: 2px solid #e2e8f0;
+            border: 2px solid var(--border-light);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             position: relative;
         }
@@ -421,7 +449,7 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: #3b82f6;
+            background: var(--primary-blue);
             color: white;
             padding: 0.25rem 1rem;
             border-radius: 20px;
@@ -457,14 +485,14 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #2563eb;
+            border-color: var(--primary-blue-dark);
             box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
             transform: translateY(-1px);
         }
 
         .submit-btn {
             width: 100%;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
             color: white;
             padding: 1.2rem 2rem;
             border: none;
@@ -480,6 +508,60 @@
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Testimonial Enhancement */
+        .testimonial {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--primary-blue-dark);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-blue-dark);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--background-light);
+            padding: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-light);
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f1f5f9;
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.6;
         }
 
         /* Benefits Section */
@@ -498,13 +580,21 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(37,99,235,0.05) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(59,130,246,0.05) 0%, transparent 70%);
             z-index: 0;
         }
 
         .benefits .container {
             position: relative;
             z-index: 1;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            font-size: 2rem;
+            font-weight: 700;
         }
 
         .benefits-grid {
@@ -534,65 +624,24 @@
         .benefit-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: var(--success-green);
         }
 
-        /* Testimonial Enhancement */
-        .testimonial {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid #2563eb;
-            position: relative;
-        }
-
-        .testimonial::before {
-            content: '"';
-            font-size: 4rem;
-            color: #2563eb;
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            line-height: 1;
-            opacity: 0.3;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            margin: 3rem 0;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 10px;
+        .benefit-card h3 {
+            color: var(--text-dark);
             margin-bottom: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            background: #f8fafc;
-            padding: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            color: #1e293b;
-            cursor: pointer;
-            border-bottom: 1px solid #e2e8f0;
-            transition: background-color 0.3s;
         }
 
-        .faq-question:hover {
-            background: #f1f5f9;
-        }
-
-        .faq-answer {
-            padding: 1.5rem;
-            color: #64748b;
+        .benefit-card p {
+            color: var(--text-medium);
             line-height: 1.6;
         }
 
         /* Footer */
         footer {
-            background: #1e293b;
+            background: var(--text-dark);
             color: white;
             text-align: center;
             padding: 3rem 0 2rem;
@@ -608,17 +657,34 @@
 
         .footer-section h4 {
             margin-bottom: 1rem;
-            color: #60a5fa;
+            color: var(--primary-blue-light);
+            font-weight: 600;
         }
 
         .footer-section p, .footer-section a {
             color: #cbd5e1;
             text-decoration: none;
             line-height: 1.6;
+            margin-bottom: 0.5rem;
         }
 
         .footer-section a:hover {
             color: white;
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue-dark);
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         /* Mobile Optimizations */
@@ -719,6 +785,10 @@
             .signup-form {
                 padding: 1.5rem;
             }
+
+            .container {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
@@ -746,7 +816,7 @@
                 <div class="rating-text">4.9/5 Stars • 127+ Happy Patients</div>
             </div>
             
-            <a href="#signupForm" class="cta-button">Schedule Free Consultation</a>
+            <a href="#signupForm" class="cta-button" id="ctaButton">Schedule Free Consultation</a>
             
             <div class="trust-indicators">
                 <div class="trust-item">
@@ -788,7 +858,7 @@
                     title="Graytok Family Vision Care Location - 235 Humphrey Rd, Greensburg, PA">
                 </iframe>
             </div>
-            <div style="color: #64748b; font-size: 0.9rem; line-height: 1.4;">
+            <div style="color: var(--text-light); font-size: 0.9rem; line-height: 1.4;">
                 <strong>235 Humphrey Rd, Greensburg, PA 15601</strong><br>
                 Free Parking • Easy Access from Route 119 • Serving All of Westmoreland County
             </div>
@@ -797,11 +867,11 @@
         <div class="main-content">
             <div class="info-section">
                 <h2>Experiencing Chronic Dry Eye Symptoms?</h2>
-                <p style="font-size: 1.05rem; color: #475569; margin-bottom: 1rem;">
+                <p style="font-size: 1.05rem; color: var(--text-medium); margin-bottom: 1rem;">
                     <strong>Get the dry eye relief you deserve.</strong> Dr. Mark Graytok and Dr. Brian Graytok have been providing comprehensive dry eye treatment in Greensburg for over 30 years, helping patients find lasting relief from dry eye syndrome.
                 </p>
 
-                <h3 style="color: #3b82f6; margin: 1.5rem 0 1rem;">Stop These Dry Eye Symptoms:</h3>
+                <h3 style="color: var(--primary-blue); margin: 1.5rem 0 1rem;">Stop These Dry Eye Symptoms:</h3>
                 <ul class="symptoms">
                     <li><strong>Burning, stinging eye pain</strong> that affects daily activities</li>
                     <li><strong>Gritty, sandy sensation</strong> in your eyes</li>
@@ -815,11 +885,11 @@
                     <p style="font-style: italic; margin-bottom: 1rem;">
                         "After years of trying different drops and treatments, Dr. Graytok's OptiLight IPL therapy finally gave me the dry eye relief I needed. I can't thank them enough!"
                     </p>
-                    <div style="font-weight: 600; color: #2563eb;">— Sarah M., Latrobe</div>
+                    <div style="font-weight: 600; color: var(--primary-blue-dark);">— Sarah M., Latrobe</div>
                 </div>
 
-                <h3 style="color: #1e293b; margin: 1.5rem 0 1rem;">Advanced Dry Eye Relief Options:</h3>
-                <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #2563eb;">
+                <h3>Advanced Dry Eye Relief Options:</h3>
+                <div class="highlight-box">
                     <ul style="margin: 0; padding-left: 1rem;">
                         <li><strong>OptiLight IPL Therapy</strong> - FDA-approved intense pulsed light treatment</li>
                         <li><strong>iLux Meibomian Gland Treatment</strong> - Unblocks oil glands for natural lubrication</li>
@@ -827,11 +897,11 @@
                         <li><strong>Prescription Eye Drops</strong> - Customized medication therapy</li>
                         <li><strong>Punctal Plugs</strong> - Prevent tear drainage for lasting relief</li>
                     </ul>
-                    <p style="margin: 1rem 0 0; font-weight: 600; color: #1e293b;">✓ Most Insurance Plans Accepted</p>
+                    <p style="margin: 1rem 0 0; font-weight: 600; color: var(--text-dark);">✓ Most Insurance Plans Accepted</p>
                 </div>
 
                 <div class="faq-section">
-                    <h3 style="color: #1e293b; margin: 2rem 0 1rem;">Common Questions About Dry Eye Treatment:</h3>
+                    <h3>Common Questions About Dry Eye Treatment:</h3>
                     
                     <div class="faq-item">
                         <div class="faq-question">What causes chronic dry eye syndrome?</div>
@@ -849,9 +919,224 @@
                     </div>
                 </div>
 
-                <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 4px solid #3b82f6;">
-                    <h4 style="color: #1e293b; margin-bottom: 0.5rem;">Why Choose Our Greensburg Practice?</h4>
+                <div class="highlight-box">
+                    <h4>Why Choose Our Greensburg Practice?</h4>
                     <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Board-certified optometrists • State-of-the-art technology • Personalized treatment plans</p>
-                    <p style="font-size: 0.875rem; color: #64748b;">Proudly serving Greensburg, Latrobe, Mt. Pleasant, Jeannette, and all of Westmoreland County</p>
+                    <p style="font-size: 0.875rem; color: var(--text-light);">Proudly serving Greensburg, Latrobe, Mt. Pleasant, Jeannette, and all of Westmoreland County</p>
                 </div>
             </div>
+
+            <form class="signup-form" 
+                  id="signupForm" 
+                  action="https://formspree.io/f/movnazzo" 
+                  method="POST">
+                <h2 style="margin-bottom: 1.5rem; text-align: center; color: #2d3748;">Schedule Your Free Dry Eye Consultation</h2>
+                <p style="text-align: center; color: var(--primary-blue); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Limited appointments available - Don't wait for relief</p>
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferred-time">Preferred Time</label>
+                    <select id="preferred-time" name="preferred-time">
+                        <option value="">Select preferred time</option>
+                        <option value="morning">Morning (8am-12pm)</option>
+                        <option value="afternoon">Afternoon (12pm-5pm)</option>
+                        <option value="evening">Evening (5pm-7pm)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="symptoms">Describe Your Dry Eye Symptoms (Optional)</label>
+                    <textarea id="symptoms" name="symptoms" rows="2" placeholder="Tell us about your dry eye symptoms to help us prepare for your visit..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Get Your Free Consultation</button>
+                
+                <p style="font-size: 0.8rem; color: #718096; text-align: center; margin-top: 1rem; line-height: 1.4;">
+                    Your information is confidential and HIPAA-protected<br>
+                    We'll contact you within 24 hours to schedule your dry eye evaluation
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>Why Choose Graytok Family Vision Care for Dry Eye Relief?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Expert Dry Eye Specialists</h3>
+                    <p>Dr. Mark Graytok and Dr. Brian Graytok bring over 30 years of specialized experience in comprehensive dry eye treatment and advanced therapies.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Advanced Treatment Technology</h3>
+                    <p>State-of-the-art OptiLight IPL, iLux, and BlephEx systems for effective dry eye relief using the latest FDA-approved methods.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Proven Patient Results</h3>
+                    <p>"The dry eye relief I received exceeded my expectations. Dr. Graytok's personalized treatment plan changed my quality of life completely." - Maria K., Greensburg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dry Eye Treatment Services</h4>
+                    <p>OptiLight IPL Therapy</p>
+                    <p>iLux Meibomian Treatment</p>
+                    <p>BlephEx Eyelid Cleaning</p>
+                    <p>Comprehensive Eye Exams</p>
+                    <p>Dry Eye Syndrome Diagnosis</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><strong>235 Humphrey Rd.</strong></p>
+                    <p>Greensburg, PA 15601</p>
+                    <p><a href="tel:724-834-8033">(724) 834-8033</a></p>
+                    <p><a href="mailto:info@drgraytok.com">info@drgraytok.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Areas We Serve</h4>
+                    <p>Greensburg, PA</p>
+                    <p>Latrobe, PA</p>
+                    <p>Mt. Pleasant, PA</p>
+                    <p>Jeannette, PA</p>
+                    <p>All of Westmoreland County</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Graytok Family Vision Care. Providing advanced dry eye relief in Greensburg for over 30 years.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced smooth scrolling with better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButton = document.getElementById('ctaButton');
+            const signupForm = document.getElementById('signupForm');
+            
+            if (ctaButton && signupForm) {
+                ctaButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Smooth scroll to form
+                    signupForm.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                    
+                    // Add visual feedback
+                    signupForm.style.transform = 'scale(1.02)';
+                    signupForm.style.transition = 'transform 0.3s ease';
+                    
+                    setTimeout(() => {
+                        signupForm.style.transform = 'scale(1)';
+                        // Focus on first input for better UX
+                        const firstInput = signupForm.querySelector('input[type="text"]');
+                        if (firstInput) {
+                            firstInput.focus();
+                            firstInput.style.boxShadow = '0 0 0 4px rgba(59, 130, 246, 0.2)';
+                            setTimeout(() => {
+                                firstInput.style.boxShadow = '';
+                            }, 2000);
+                        }
+                    }, 300);
+                });
+            }
+
+            // Form validation and enhancement
+            const form = document.getElementById('signupForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    const submitBtn = form.querySelector('.submit-btn');
+                    submitBtn.innerHTML = 'Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Re-enable after 3 seconds in case of issues
+                    setTimeout(() => {
+                        submitBtn.innerHTML = 'Get Your Free Consultation';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                });
+            }
+
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isOpen = answer.style.display === 'block';
+                    
+                    // Close all answers
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.style.display = 'none';
+                    });
+                    
+                    // Toggle current answer
+                    if (!isOpen) {
+                        answer.style.display = 'block';
+                        this.style.backgroundColor = '#e0f2fe';
+                    } else {
+                        this.style.backgroundColor = '';
+                    }
+                });
+            });
+
+            // Initially hide all FAQ answers
+            document.querySelectorAll('.faq-answer').forEach(answer => {
+                answer.style.display = 'none';
+            });
+        });
+
+        // Track form interactions for analytics (if needed)
+        function trackFormInteraction(event) {
+            // Add your analytics code here
+            console.log('Form interaction:', event);
+        }
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.benefit-card, .faq-item, .testimonial');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
