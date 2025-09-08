@@ -18,6 +18,10 @@
     <meta property="og:image" content="https://images.pexels.com/photos/3881485/pexels-photo-3881485.jpeg">
     <meta property="og:locale" content="en_US">
     
+    <!-- Preload critical fonts to reduce render blocking -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSdviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtXK-F2qC0s.woff2" as="font" type="font/woff2" crossorigin>
+    
     <!-- Enhanced Local Business Schema -->
     <script type="application/ld+json">
     {
@@ -115,20 +119,11 @@
     }
     </script>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts - defer non-critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSRBCRCXWL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YSRBCRCXWL');
-    </script>
-    
+    <!-- Critical CSS inlined for faster rendering -->
     <style>
         * {
             margin: 0;
@@ -362,6 +357,321 @@
             color: var(--text-medium);
         }
 
+        /* Critical mobile styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .social-proof {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero {
+                padding: 2rem 0 1rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 1rem 2rem;
+                display: block;
+                max-width: 300px;
+                margin: 1.5rem auto;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .phone {
+                font-size: 0.9rem;
+                padding: 0.625rem 1.25rem;
+            }
+
+            .hero-image img {
+                height: 250px;
+                max-width: 400px;
+            }
+
+            .trust-indicators {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .trust-item {
+                padding: 0.75rem;
+            }
+
+            .urgency-banner {
+                font-size: 0.8rem;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            
+            .trust-indicators {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+    
+    <!-- Defer non-critical CSS to avoid render blocking -->
+    <link rel="preload" href="data:text/css," as="style" onload="this.onload=null;this.rel='stylesheet';this.href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap"></noscript>
+</head>
+<body>
+    <div class="urgency-banner">
+        Same-Day Appointments Available • Call Now: (724) 834-8033 • Limited Slots This Month
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Graytok Family Vision Care</a>
+                <a href="tel:724-834-8033" class="phone">Call (724) 834-8033</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Find Lasting Dry Eye Relief in Greensburg</h1>
+                <p class="hero-subtitle">Advanced Dry Eye Treatment • Trusted by 1,000+ Patients • Same-Day Appointments</p>
+                
+                <div class="social-proof">
+                    <div class="rating-stars">★★★★★</div>
+                    <div class="rating-text">4.9/5 Stars • 127+ Happy Patients</div>
+                </div>
+                
+                <a href="#signupForm" class="cta-button" id="ctaButton">Schedule Free Consultation</a>
+                
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">30+ Years Experience</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">Same-Day Appointments</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">Insurance Accepted</div>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">✓</div>
+                        <div class="trust-text">Advanced Technology</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="hero-image">
+            <img src="https://images.pexels.com/photos/3881485/pexels-photo-3881485.jpeg?auto=compress&cs=tinysrgb&w=500&h=350&fit=crop" 
+                 alt="Expert dry eye treatment in Greensburg PA - Dr. Mark and Dr. Brian Graytok" 
+                 loading="lazy"
+                 width="500" 
+                 height="350">
+        </div>
+
+        <div class="container">
+            <section class="map-section">
+                <h2>Visit Our Convenient Greensburg Location</h2>
+                <div id="map-placeholder" class="map-container-placeholder">
+                    <div class="map-placeholder-content">
+                        <div class="map-placeholder-icon">📍</div>
+                        <div class="map-placeholder-text">Click to load interactive map</div>
+                        <div class="map-placeholder-address">235 Humphrey Rd, Greensburg, PA 15601</div>
+                    </div>
+                </div>
+                <div class="map-address-info">
+                    <strong>235 Humphrey Rd, Greensburg, PA 15601</strong><br>
+                    Free Parking • Easy Access from Route 119 • Serving All of Westmoreland County
+                </div>
+            </section>
+
+            <div class="main-content">
+                <div class="info-section">
+                    <h2>Experiencing Chronic Dry Eye Symptoms?</h2>
+                    <p class="intro-text">
+                        <strong>Get the dry eye relief you deserve.</strong> Dr. Mark Graytok and Dr. Brian Graytok have been providing comprehensive dry eye treatment in Greensburg for over 30 years, helping patients find lasting relief from dry eye syndrome.
+                    </p>
+
+                    <h3 class="symptoms-heading">Stop These Dry Eye Symptoms:</h3>
+                    <ul class="symptoms">
+                        <li><strong>Burning, stinging eye pain</strong> that affects daily activities</li>
+                        <li><strong>Gritty, sandy sensation</strong> in your eyes</li>
+                        <li><strong>Excessive tearing</strong> or watery eyes</li>
+                        <li><strong>Blurred vision</strong> affecting work and driving</li>
+                        <li><strong>Contact lens discomfort</strong> making them unwearable</li>
+                        <li><strong>Eye fatigue</strong> from computer and screen use</li>
+                    </ul>
+
+                    <div class="testimonial">
+                        <p class="testimonial-text">
+                            "After years of trying different drops and treatments, Dr. Graytok's OptiLight IPL therapy finally gave me the dry eye relief I needed. I can't thank them enough!"
+                        </p>
+                        <div class="testimonial-author">— Sarah M., Latrobe</div>
+                    </div>
+
+                    <h3>Advanced Dry Eye Relief Options:</h3>
+                    <div class="highlight-box">
+                        <ul>
+                            <li><strong>OptiLight IPL Therapy</strong> - FDA-approved intense pulsed light treatment</li>
+                            <li><strong>iLux Meibomian Gland Treatment</strong> - Unblocks oil glands for natural lubrication</li>
+                            <li><strong>BlephEx Eyelid Cleaning</strong> - Professional deep cleaning therapy</li>
+                            <li><strong>Prescription Eye Drops</strong> - Customized medication therapy</li>
+                            <li><strong>Punctal Plugs</strong> - Prevent tear drainage for lasting relief</li>
+                        </ul>
+                        <p class="insurance-note">✓ Most Insurance Plans Accepted</p>
+                    </div>
+
+                    <div class="faq-section">
+                        <h3>Common Questions About Dry Eye Treatment:</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">What causes chronic dry eye syndrome?</div>
+                            <div class="faq-answer">Dry eye syndrome can result from aging, hormonal changes, medications, environmental factors, or blocked meibomian glands. Our comprehensive evaluation identifies your specific cause for targeted treatment.</div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">How effective is OptiLight IPL for dry eye relief?</div>
+                            <div class="faq-answer">OptiLight IPL therapy has shown excellent results, with most patients experiencing significant dry eye relief after 3-4 treatments. It's FDA-approved and addresses the root cause of dry eye disease.</div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">How long does dry eye treatment take?</div>
+                            <div class="faq-answer">Treatment duration varies by individual, but most patients begin experiencing dry eye relief within 2-3 weeks of starting treatment. Complete improvement typically occurs over 2-3 months.</div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>Why Choose Our Greensburg Practice?</h4>
+                        <p class="practice-benefits">Board-certified optometrists • State-of-the-art technology • Personalized treatment plans</p>
+                        <p class="service-area">Proudly serving Greensburg, Latrobe, Mt. Pleasant, Jeannette, and all of Westmoreland County</p>
+                    </div>
+                </div>
+
+                <form class="signup-form" 
+                      id="signupForm" 
+                      action="https://formspree.io/f/movnazzo" 
+                      method="POST">
+                    <h2 class="form-title">Schedule Your Free Dry Eye Consultation</h2>
+                    <p class="form-subtitle">Limited appointments available - Don't wait for relief</p>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferred-time">Preferred Time</label>
+                        <select id="preferred-time" name="preferred-time">
+                            <option value="">Select preferred time</option>
+                            <option value="morning">Morning (8am-12pm)</option>
+                            <option value="afternoon">Afternoon (12pm-5pm)</option>
+                            <option value="evening">Evening (5pm-7pm)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="symptoms">Describe Your Dry Eye Symptoms (Optional)</label>
+                        <textarea id="symptoms" name="symptoms" rows="2" placeholder="Tell us about your dry eye symptoms to help us prepare for your visit..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Get Your Free Consultation</button>
+                    
+                    <p class="form-disclaimer">
+                        Your information is confidential and HIPAA-protected<br>
+                        We'll contact you within 24 hours to schedule your dry eye evaluation
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>Why Choose Graytok Family Vision Care for Dry Eye Relief?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Expert Dry Eye Specialists</h3>
+                    <p>Dr. Mark Graytok and Dr. Brian Graytok bring over 30 years of specialized experience in comprehensive dry eye treatment and advanced therapies.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Advanced Treatment Technology</h3>
+                    <p>State-of-the-art OptiLight IPL, iLux, and BlephEx systems for effective dry eye relief using the latest FDA-approved methods.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Proven Patient Results</h3>
+                    <p>"The dry eye relief I received exceeded my expectations. Dr. Graytok's personalized treatment plan changed my quality of life completely." - Maria K., Greensburg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dry Eye Treatment Services</h4>
+                    <p>OptiLight IPL Therapy</p>
+                    <p>iLux Meibomian Treatment</p>
+                    <p>BlephEx Eyelid Cleaning</p>
+                    <p>Comprehensive Eye Exams</p>
+                    <p>Dry Eye Syndrome Diagnosis</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><strong>235 Humphrey Rd.</strong></p>
+                    <p>Greensburg, PA 15601</p>
+                    <p><a href="tel:724-834-8033">(724) 834-8033</a></p>
+                    <p><a href="mailto:info@drgraytok.com">info@drgraytok.com</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Areas We Serve</h4>
+                    <p>Greensburg, PA</p>
+                    <p>Latrobe, PA</p>
+                    <p>Mt. Pleasant, PA</p>
+                    <p>Jeannette, PA</p>
+                    <p>All of Westmoreland County</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Graytok Family Vision Care. Providing advanced dry eye relief in Greensburg for over 30 years.</p>
+        </div>
+    </footer>
+
+    <!-- Non-critical CSS loaded after page render -->
+    <style id="non-critical-styles">
         /* Map Section */
         .map-section {
             background: white;
@@ -372,10 +682,49 @@
             text-align: center;
         }
 
-        .map-section h3 {
+        .map-section h2 {
             color: var(--text-dark);
             margin-bottom: 1rem;
             font-size: 1.5rem;
+        }
+
+        .map-container-placeholder {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            margin-bottom: 1rem;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .map-container-placeholder:hover {
+            background: #e5e7eb;
+        }
+
+        .map-placeholder-content {
+            text-align: center;
+            color: var(--text-medium);
+        }
+
+        .map-placeholder-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .map-placeholder-text {
+            font-weight: 600;
+        }
+
+        .map-placeholder-address {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
         }
 
         .map-container {
@@ -392,6 +741,12 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        .map-address-info {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         /* Main Content */
@@ -419,6 +774,17 @@
             margin: 1.5rem 0 1rem;
             font-size: 1.3rem;
             font-weight: 600;
+        }
+
+        .intro-text {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+        }
+
+        .symptoms-heading {
+            color: #1e40af !important;
+            margin: 1.5rem 0 1rem;
         }
 
         .symptoms {
@@ -466,6 +832,22 @@
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.5px;
+        }
+
+        .form-title {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #2d3748;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .form-subtitle {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .form-group {
@@ -520,6 +902,14 @@
             box-shadow: 0 15px 35px rgba(59, 130, 246, 0.3);
         }
 
+        .form-disclaimer {
+            font-size: 0.8rem;
+            color: #718096;
+            text-align: center;
+            margin-top: 1rem;
+            line-height: 1.4;
+        }
+
         /* Testimonial Enhancement */
         .testimonial {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
@@ -539,6 +929,16 @@
             left: 20px;
             line-height: 1;
             opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-blue-dark);
         }
 
         /* FAQ Section */
@@ -572,6 +972,7 @@
             padding: 1.5rem;
             color: var(--text-light);
             line-height: 1.6;
+            display: none;
         }
 
         /* Benefits Section */
@@ -697,64 +1098,31 @@
             font-weight: 600;
         }
 
+        .practice-benefits {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-area {
+            font-size: 0.875rem;
+            color: #374151;
+        }
+
+        .insurance-note {
+            margin: 1rem 0 0;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
         /* Mobile Optimizations */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .social-proof {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
             .main-content {
                 grid-template-columns: 1fr;
                 padding: 1.5rem;
                 gap: 2rem;
             }
 
-            .hero {
-                padding: 2rem 0 1rem;
-            }
-
-            .cta-button {
-                font-size: 1rem;
-                padding: 1rem 2rem;
-                display: block;
-                max-width: 300px;
-                margin: 1.5rem auto;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
-            .phone {
-                font-size: 0.9rem;
-                padding: 0.625rem 1.25rem;
-            }
-
-            .hero-image img {
-                height: 250px;
-                max-width: 400px;
-            }
-
-            .trust-indicators {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
-
-            .trust-item {
-                padding: 0.75rem;
-            }
-
+            .map-container-placeholder,
             .map-container {
                 height: 280px;
             }
@@ -767,11 +1135,6 @@
                 padding: 1.5rem;
             }
 
-            .urgency-banner {
-                font-size: 0.8rem;
-                padding: 0.75rem;
-            }
-
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -780,14 +1143,6 @@
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.9rem;
-            }
-            
-            .trust-indicators {
-                grid-template-columns: 1fr;
-            }
-            
             .main-content {
                 padding: 1rem;
             }
@@ -795,250 +1150,30 @@
             .signup-form {
                 padding: 1.5rem;
             }
-
-            .container {
-                padding: 0 15px;
-            }
         }
     </style>
-</head>
-<body>
-    <div class="urgency-banner">
-        Same-Day Appointments Available • Call Now: (724) 834-8033 • Limited Slots This Month
-    </div>
 
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">Graytok Family Vision Care</a>
-                <a href="tel:724-834-8033" class="phone">Call (724) 834-8033</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Find Lasting Dry Eye Relief in Greensburg</h1>
-            <p class="hero-subtitle">Advanced Dry Eye Treatment • Trusted by 1,000+ Patients • Same-Day Appointments</p>
-            
-            <div class="social-proof">
-                <div class="rating-stars">★★★★★</div>
-                <div class="rating-text">4.9/5 Stars • 127+ Happy Patients</div>
-            </div>
-            
-            <a href="#signupForm" class="cta-button" id="ctaButton">Schedule Free Consultation</a>
-            
-            <div class="trust-indicators">
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <div class="trust-text">30+ Years Experience</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <div class="trust-text">Same-Day Appointments</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <div class="trust-text">Insurance Accepted</div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">✓</div>
-                    <div class="trust-text">Advanced Technology</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="hero-image">
-        <img src="https://images.pexels.com/photos/3881485/pexels-photo-3881485.jpeg" alt="Expert dry eye treatment in Greensburg PA - Dr. Mark and Dr. Brian Graytok" loading="eager">
-    </div>
-
-    <div class="container">
-        <div class="map-section">
-            <h3>Visit Our Convenient Greensburg Location</h3>
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.8!2d-79.5389!3d40.3017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDE4JzA2LjEiTiA3OcKwMzInMjAuMCJX!5e0!3m2!1sen!2sus!4v1635000000000!5m2!1sen!2sus&q=235+Humphrey+Rd,+Greensburg,+PA+15601" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Graytok Family Vision Care Location - 235 Humphrey Rd, Greensburg, PA">
-                </iframe>
-            </div>
-            <div style="color: var(--text-light); font-size: 0.9rem; line-height: 1.4;">
-                <strong>235 Humphrey Rd, Greensburg, PA 15601</strong><br>
-                Free Parking • Easy Access from Route 119 • Serving All of Westmoreland County
-            </div>
-        </div>
-
-        <div class="main-content">
-            <div class="info-section">
-                <h2>Experiencing Chronic Dry Eye Symptoms?</h2>
-                <p style="font-size: 1.05rem; color: var(--text-medium); margin-bottom: 1rem;">
-                    <strong>Get the dry eye relief you deserve.</strong> Dr. Mark Graytok and Dr. Brian Graytok have been providing comprehensive dry eye treatment in Greensburg for over 30 years, helping patients find lasting relief from dry eye syndrome.
-                </p>
-
-                <h3 style="color: var(--primary-blue); margin: 1.5rem 0 1rem;">Stop These Dry Eye Symptoms:</h3>
-                <ul class="symptoms">
-                    <li><strong>Burning, stinging eye pain</strong> that affects daily activities</li>
-                    <li><strong>Gritty, sandy sensation</strong> in your eyes</li>
-                    <li><strong>Excessive tearing</strong> or watery eyes</li>
-                    <li><strong>Blurred vision</strong> affecting work and driving</li>
-                    <li><strong>Contact lens discomfort</strong> making them unwearable</li>
-                    <li><strong>Eye fatigue</strong> from computer and screen use</li>
-                </ul>
-
-                <div class="testimonial">
-                    <p style="font-style: italic; margin-bottom: 1rem;">
-                        "After years of trying different drops and treatments, Dr. Graytok's OptiLight IPL therapy finally gave me the dry eye relief I needed. I can't thank them enough!"
-                    </p>
-                    <div style="font-weight: 600; color: var(--primary-blue-dark);">— Sarah M., Latrobe</div>
-                </div>
-
-                <h3>Advanced Dry Eye Relief Options:</h3>
-                <div class="highlight-box">
-                    <ul style="margin: 0; padding-left: 1rem;">
-                        <li><strong>OptiLight IPL Therapy</strong> - FDA-approved intense pulsed light treatment</li>
-                        <li><strong>iLux Meibomian Gland Treatment</strong> - Unblocks oil glands for natural lubrication</li>
-                        <li><strong>BlephEx Eyelid Cleaning</strong> - Professional deep cleaning therapy</li>
-                        <li><strong>Prescription Eye Drops</strong> - Customized medication therapy</li>
-                        <li><strong>Punctal Plugs</strong> - Prevent tear drainage for lasting relief</li>
-                    </ul>
-                    <p style="margin: 1rem 0 0; font-weight: 600; color: var(--text-dark);">✓ Most Insurance Plans Accepted</p>
-                </div>
-
-                <div class="faq-section">
-                    <h3>Common Questions About Dry Eye Treatment:</h3>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">What causes chronic dry eye syndrome?</div>
-                        <div class="faq-answer">Dry eye syndrome can result from aging, hormonal changes, medications, environmental factors, or blocked meibomian glands. Our comprehensive evaluation identifies your specific cause for targeted treatment.</div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How effective is OptiLight IPL for dry eye relief?</div>
-                        <div class="faq-answer">OptiLight IPL therapy has shown excellent results, with most patients experiencing significant dry eye relief after 3-4 treatments. It's FDA-approved and addresses the root cause of dry eye disease.</div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">How long does dry eye treatment take?</div>
-                        <div class="faq-answer">Treatment duration varies by individual, but most patients begin experiencing dry eye relief within 2-3 weeks of starting treatment. Complete improvement typically occurs over 2-3 months.</div>
-                    </div>
-                </div>
-
-                <div class="highlight-box">
-                    <h4>Why Choose Our Greensburg Practice?</h4>
-                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Board-certified optometrists • State-of-the-art technology • Personalized treatment plans</p>
-                    <p style="font-size: 0.875rem; color: var(--text-light);">Proudly serving Greensburg, Latrobe, Mt. Pleasant, Jeannette, and all of Westmoreland County</p>
-                </div>
-            </div>
-
-            <form class="signup-form" 
-                  id="signupForm" 
-                  action="https://formspree.io/f/movnazzo" 
-                  method="POST">
-                <h2 style="margin-bottom: 1.5rem; text-align: center; color: #2d3748;">Schedule Your Free Dry Eye Consultation</h2>
-                <p style="text-align: center; color: var(--primary-blue); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;">Limited appointments available - Don't wait for relief</p>
-                
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="preferred-time">Preferred Time</label>
-                    <select id="preferred-time" name="preferred-time">
-                        <option value="">Select preferred time</option>
-                        <option value="morning">Morning (8am-12pm)</option>
-                        <option value="afternoon">Afternoon (12pm-5pm)</option>
-                        <option value="evening">Evening (5pm-7pm)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="symptoms">Describe Your Dry Eye Symptoms (Optional)</label>
-                    <textarea id="symptoms" name="symptoms" rows="2" placeholder="Tell us about your dry eye symptoms to help us prepare for your visit..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Get Your Free Consultation</button>
-                
-                <p style="font-size: 0.8rem; color: #718096; text-align: center; margin-top: 1rem; line-height: 1.4;">
-                    Your information is confidential and HIPAA-protected<br>
-                    We'll contact you within 24 hours to schedule your dry eye evaluation
-                </p>
-            </form>
-        </div>
-    </div>
-
-    <section class="benefits">
-        <div class="container">
-            <h2>Why Choose Graytok Family Vision Care for Dry Eye Relief?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Expert Dry Eye Specialists</h3>
-                    <p>Dr. Mark Graytok and Dr. Brian Graytok bring over 30 years of specialized experience in comprehensive dry eye treatment and advanced therapies.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Advanced Treatment Technology</h3>
-                    <p>State-of-the-art OptiLight IPL, iLux, and BlephEx systems for effective dry eye relief using the latest FDA-approved methods.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Proven Patient Results</h3>
-                    <p>"The dry eye relief I received exceeded my expectations. Dr. Graytok's personalized treatment plan changed my quality of life completely." - Maria K., Greensburg</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Dry Eye Treatment Services</h4>
-                    <p>OptiLight IPL Therapy</p>
-                    <p>iLux Meibomian Treatment</p>
-                    <p>BlephEx Eyelid Cleaning</p>
-                    <p>Comprehensive Eye Exams</p>
-                    <p>Dry Eye Syndrome Diagnosis</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Information</h4>
-                    <p><strong>235 Humphrey Rd.</strong></p>
-                    <p>Greensburg, PA 15601</p>
-                    <p><a href="tel:724-834-8033">(724) 834-8033</a></p>
-                    <p><a href="mailto:info@drgraytok.com">info@drgraytok.com</a></p>
-                </div>
-                <div class="footer-section">
-                    <h4>Areas We Serve</h4>
-                    <p>Greensburg, PA</p>
-                    <p>Latrobe, PA</p>
-                    <p>Mt. Pleasant, PA</p>
-                    <p>Jeannette, PA</p>
-                    <p>All of Westmoreland County</p>
-                </div>
-            </div>
-            <p>&copy; 2025 Graytok Family Vision Care. Providing advanced dry eye relief in Greensburg for over 30 years.</p>
-        </div>
-    </footer>
-
+    <!-- Optimized JavaScript with passive listeners and performance improvements -->
     <script>
-        // Enhanced smooth scrolling with better UX
+        // Defer Google Analytics load until after critical rendering
+        function loadGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-YSRBCRCXWL';
+            script.async = true;
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-YSRBCRCXWL');
+            };
+        }
+
+        // Load analytics after page is fully loaded
+        window.addEventListener('load', loadGoogleAnalytics, { passive: true });
+
+        // Enhanced smooth scrolling with better UX - using passive listeners where possible
         document.addEventListener('DOMContentLoaded', function() {
             const ctaButton = document.getElementById('ctaButton');
             const signupForm = document.getElementById('signupForm');
@@ -1047,29 +1182,56 @@
                 ctaButton.addEventListener('click', function(e) {
                     e.preventDefault();
                     
-                    // Smooth scroll to form
-                    signupForm.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
+                    // Use requestAnimationFrame to avoid forced reflow
+                    requestAnimationFrame(function() {
+                        signupForm.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                        
+                        // Add visual feedback without causing layout thrashing
+                        setTimeout(function() {
+                            signupForm.style.transform = 'scale(1.02)';
+                            signupForm.style.transition = 'transform 0.3s ease';
+                            
+                            setTimeout(function() {
+                                signupForm.style.transform = 'scale(1)';
+                                // Focus on first input for better UX
+                                const firstInput = signupForm.querySelector('input[type="text"]');
+                                if (firstInput) {
+                                    firstInput.focus();
+                                    firstInput.style.boxShadow = '0 0 0 4px rgba(59, 130, 246, 0.2)';
+                                    setTimeout(function() {
+                                        firstInput.style.boxShadow = '';
+                                    }, 2000);
+                                }
+                            }, 300);
+                        }, 100);
                     });
-                    
-                    // Add visual feedback
-                    signupForm.style.transform = 'scale(1.02)';
-                    signupForm.style.transition = 'transform 0.3s ease';
-                    
-                    setTimeout(() => {
-                        signupForm.style.transform = 'scale(1)';
-                        // Focus on first input for better UX
-                        const firstInput = signupForm.querySelector('input[type="text"]');
-                        if (firstInput) {
-                            firstInput.focus();
-                            firstInput.style.boxShadow = '0 0 0 4px rgba(59, 130, 246, 0.2)';
-                            setTimeout(() => {
-                                firstInput.style.boxShadow = '';
-                            }, 2000);
-                        }
-                    }, 300);
                 });
+            }
+
+            // Lazy load map to improve initial page load
+            const mapPlaceholder = document.getElementById('map-placeholder');
+            if (mapPlaceholder) {
+                mapPlaceholder.addEventListener('click', function() {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.8!2d-79.5389!3d40.3017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDE4JzA2LjEiTiA3OcKwMzInMjAuMCJX!5e0!3m2!1sen!2sus!4v1635000000000!5m2!1sen!2sus&q=235+Humphrey+Rd,+Greensburg,+PA+15601';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.border = '0';
+                    iframe.allowFullscreen = true;
+                    iframe.loading = 'lazy';
+                    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+                    iframe.title = 'Graytok Family Vision Care Location - 235 Humphrey Rd, Greensburg, PA';
+                    
+                    // Create new container to avoid layout shift
+                    const mapContainer = document.createElement('div');
+                    mapContainer.className = 'map-container';
+                    mapContainer.appendChild(iframe);
+                    
+                    mapPlaceholder.parentNode.replaceChild(mapContainer, mapPlaceholder);
+                }, { passive: true });
             }
 
             // Form validation and enhancement
@@ -1077,62 +1239,76 @@
             if (form) {
                 form.addEventListener('submit', function(e) {
                     const submitBtn = form.querySelector('.submit-btn');
+                    const originalText = submitBtn.innerHTML;
                     submitBtn.innerHTML = 'Sending...';
                     submitBtn.disabled = true;
                     
                     // Re-enable after 3 seconds in case of issues
-                    setTimeout(() => {
-                        submitBtn.innerHTML = 'Get Your Free Consultation';
+                    setTimeout(function() {
+                        submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
                     }, 3000);
                 });
             }
 
-            // FAQ functionality
+            // FAQ functionality with optimized DOM manipulation
             const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
+            faqQuestions.forEach(function(question) {
                 question.addEventListener('click', function() {
                     const answer = this.nextElementSibling;
                     const isOpen = answer.style.display === 'block';
                     
-                    // Close all answers
-                    document.querySelectorAll('.faq-answer').forEach(ans => {
-                        ans.style.display = 'none';
+                    // Use requestAnimationFrame to batch DOM updates and avoid forced reflow
+                    requestAnimationFrame(function() {
+                        // Close all answers first
+                        document.querySelectorAll('.faq-answer').forEach(function(ans) {
+                            ans.style.display = 'none';
+                        });
+                        document.querySelectorAll('.faq-question').forEach(function(q) {
+                            q.style.backgroundColor = '';
+                        });
+                        
+                        // Toggle current answer
+                        if (!isOpen) {
+                            answer.style.display = 'block';
+                            question.style.backgroundColor = '#e0f2fe';
+                        }
                     });
-                    
-                    // Toggle current answer
-                    if (!isOpen) {
-                        answer.style.display = 'block';
-                        this.style.backgroundColor = '#e0f2fe';
-                    } else {
-                        this.style.backgroundColor = '';
-                    }
-                });
+                }, { passive: true });
             });
 
             // Initially hide all FAQ answers
-            document.querySelectorAll('.faq-answer').forEach(answer => {
+            document.querySelectorAll('.faq-answer').forEach(function(answer) {
                 answer.style.display = 'none';
             });
         });
 
         // Track form interactions for analytics (if needed)
         function trackFormInteraction(event) {
-            // Add your analytics code here
-            console.log('Form interaction:', event);
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_interaction', {
+                    'event_category': 'engagement',
+                    'event_label': event
+                });
+            }
         }
 
-        // Add intersection observer for animations
+        // Add intersection observer for animations with better performance
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    // Use requestAnimationFrame to ensure smooth animations and avoid forced reflow
+                    requestAnimationFrame(function() {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    });
+                    // Stop observing once animated to improve performance
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -1140,13 +1316,21 @@
         // Observe elements for scroll animations
         document.addEventListener('DOMContentLoaded', function() {
             const animateElements = document.querySelectorAll('.benefit-card, .faq-item, .testimonial');
-            animateElements.forEach(el => {
+            animateElements.forEach(function(el) {
                 el.style.opacity = '0';
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
             });
         });
+
+        // Preload fonts after critical rendering is complete
+        window.addEventListener('load', function() {
+            const fontLink = document.createElement('link');
+            fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap';
+            fontLink.rel = 'stylesheet';
+            document.head.appendChild(fontLink);
+        }, { passive: true });
     </script>
 </body>
 </html>
